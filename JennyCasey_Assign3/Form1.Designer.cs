@@ -29,52 +29,44 @@ namespace JennyCasey_Assign3
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.serverPercentDropDown = new System.Windows.Forms.ComboBox();
+            this.showPercentResultButton = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.roleDropDown = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
-            this.button3 = new System.Windows.Forms.Button();
+            this.serverRangeDropDown = new System.Windows.Forms.ComboBox();
+            this.roleServerLevelResultButton = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.minimumLevel = new System.Windows.Forms.NumericUpDown();
             this.label10 = new System.Windows.Forms.Label();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.maximumLevel = new System.Windows.Forms.NumericUpDown();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.comboBox6 = new System.Windows.Forms.ComboBox();
-            this.button4 = new System.Windows.Forms.Button();
+            this.guildTypeDropDown = new System.Windows.Forms.ComboBox();
+            this.guildTypeResultButton = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.classDropDown = new System.Windows.Forms.ComboBox();
+            this.serverDropDown = new System.Windows.Forms.ComboBox();
+            this.showClassResultButton = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.tankRadioButton = new System.Windows.Forms.RadioButton();
+            this.healerRadioButton = new System.Windows.Forms.RadioButton();
+            this.damageRadioButton = new System.Windows.Forms.RadioButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button5 = new System.Windows.Forms.Button();
+            this.roleResultButton = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
-            this.button6 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
+            this.maxLvlPercentButton = new System.Windows.Forms.Button();
+            this.queryResultBox = new System.Windows.Forms.RichTextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.minimumLevel)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.maximumLevel)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(545, 35);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(714, 708);
-            this.textBox1.TabIndex = 0;
             // 
             // label4
             // 
@@ -99,25 +91,25 @@ namespace JennyCasey_Assign3
             this.label5.TabIndex = 6;
             this.label5.Text = "Server";
             // 
-            // comboBox3
+            // serverPercentDropDown
             // 
-            this.comboBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(195, 189);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(161, 26);
-            this.comboBox3.TabIndex = 7;
+            this.serverPercentDropDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.serverPercentDropDown.FormattingEnabled = true;
+            this.serverPercentDropDown.Location = new System.Drawing.Point(195, 189);
+            this.serverPercentDropDown.Name = "serverPercentDropDown";
+            this.serverPercentDropDown.Size = new System.Drawing.Size(161, 26);
+            this.serverPercentDropDown.TabIndex = 7;
             // 
-            // button2
+            // showPercentResultButton
             // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(405, 189);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(118, 26);
-            this.button2.TabIndex = 8;
-            this.button2.Tag = "";
-            this.button2.Text = "Show Results";
-            this.button2.UseVisualStyleBackColor = true;
+            this.showPercentResultButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.showPercentResultButton.Location = new System.Drawing.Point(405, 189);
+            this.showPercentResultButton.Name = "showPercentResultButton";
+            this.showPercentResultButton.Size = new System.Drawing.Size(118, 26);
+            this.showPercentResultButton.TabIndex = 8;
+            this.showPercentResultButton.Tag = "";
+            this.showPercentResultButton.Text = "Show Results";
+            this.showPercentResultButton.UseVisualStyleBackColor = true;
             // 
             // label6
             // 
@@ -142,14 +134,14 @@ namespace JennyCasey_Assign3
             this.label7.TabIndex = 2;
             this.label7.Text = "Role";
             // 
-            // comboBox4
+            // roleDropDown
             // 
-            this.comboBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(15, 308);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(161, 26);
-            this.comboBox4.TabIndex = 8;
+            this.roleDropDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.roleDropDown.FormattingEnabled = true;
+            this.roleDropDown.Location = new System.Drawing.Point(15, 308);
+            this.roleDropDown.Name = "roleDropDown";
+            this.roleDropDown.Size = new System.Drawing.Size(161, 26);
+            this.roleDropDown.TabIndex = 8;
             // 
             // label8
             // 
@@ -163,25 +155,25 @@ namespace JennyCasey_Assign3
             this.label8.Text = "Server";
             this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
-            // comboBox5
+            // serverRangeDropDown
             // 
-            this.comboBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(195, 308);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(161, 26);
-            this.comboBox5.TabIndex = 10;
+            this.serverRangeDropDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.serverRangeDropDown.FormattingEnabled = true;
+            this.serverRangeDropDown.Location = new System.Drawing.Point(195, 308);
+            this.serverRangeDropDown.Name = "serverRangeDropDown";
+            this.serverRangeDropDown.Size = new System.Drawing.Size(161, 26);
+            this.serverRangeDropDown.TabIndex = 10;
             // 
-            // button3
+            // roleServerLevelResultButton
             // 
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(405, 307);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(118, 26);
-            this.button3.TabIndex = 11;
-            this.button3.Tag = "";
-            this.button3.Text = "Show Results";
-            this.button3.UseVisualStyleBackColor = true;
+            this.roleServerLevelResultButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.roleServerLevelResultButton.Location = new System.Drawing.Point(405, 307);
+            this.roleServerLevelResultButton.Name = "roleServerLevelResultButton";
+            this.roleServerLevelResultButton.Size = new System.Drawing.Size(118, 26);
+            this.roleServerLevelResultButton.TabIndex = 11;
+            this.roleServerLevelResultButton.Tag = "";
+            this.roleServerLevelResultButton.Text = "Show Results";
+            this.roleServerLevelResultButton.UseVisualStyleBackColor = true;
             // 
             // label9
             // 
@@ -194,12 +186,12 @@ namespace JennyCasey_Assign3
             this.label9.TabIndex = 12;
             this.label9.Text = "Min";
             // 
-            // numericUpDown1
+            // minimumLevel
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(15, 369);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(50, 22);
-            this.numericUpDown1.TabIndex = 13;
+            this.minimumLevel.Location = new System.Drawing.Point(15, 369);
+            this.minimumLevel.Name = "minimumLevel";
+            this.minimumLevel.Size = new System.Drawing.Size(50, 22);
+            this.minimumLevel.TabIndex = 13;
             // 
             // label10
             // 
@@ -213,12 +205,12 @@ namespace JennyCasey_Assign3
             this.label10.Text = "Max";
             this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
-            // numericUpDown2
+            // maximumLevel
             // 
-            this.numericUpDown2.Location = new System.Drawing.Point(126, 369);
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(50, 22);
-            this.numericUpDown2.TabIndex = 15;
+            this.maximumLevel.Location = new System.Drawing.Point(126, 369);
+            this.maximumLevel.Name = "maximumLevel";
+            this.maximumLevel.Size = new System.Drawing.Size(50, 22);
+            this.maximumLevel.TabIndex = 15;
             // 
             // label11
             // 
@@ -243,25 +235,25 @@ namespace JennyCasey_Assign3
             this.label12.TabIndex = 3;
             this.label12.Text = "Type";
             // 
-            // comboBox6
+            // guildTypeDropDown
             // 
-            this.comboBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox6.FormattingEnabled = true;
-            this.comboBox6.Location = new System.Drawing.Point(15, 471);
-            this.comboBox6.Name = "comboBox6";
-            this.comboBox6.Size = new System.Drawing.Size(161, 26);
-            this.comboBox6.TabIndex = 9;
+            this.guildTypeDropDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guildTypeDropDown.FormattingEnabled = true;
+            this.guildTypeDropDown.Location = new System.Drawing.Point(15, 471);
+            this.guildTypeDropDown.Name = "guildTypeDropDown";
+            this.guildTypeDropDown.Size = new System.Drawing.Size(161, 26);
+            this.guildTypeDropDown.TabIndex = 9;
             // 
-            // button4
+            // guildTypeResultButton
             // 
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(405, 470);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(118, 26);
-            this.button4.TabIndex = 12;
-            this.button4.Tag = "";
-            this.button4.Text = "Show Results";
-            this.button4.UseVisualStyleBackColor = true;
+            this.guildTypeResultButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guildTypeResultButton.Location = new System.Drawing.Point(405, 470);
+            this.guildTypeResultButton.Name = "guildTypeResultButton";
+            this.guildTypeResultButton.Size = new System.Drawing.Size(118, 26);
+            this.guildTypeResultButton.TabIndex = 12;
+            this.guildTypeResultButton.Tag = "";
+            this.guildTypeResultButton.Text = "Show Results";
+            this.guildTypeResultButton.UseVisualStyleBackColor = true;
             // 
             // label13
             // 
@@ -311,88 +303,88 @@ namespace JennyCasey_Assign3
             this.label3.Text = "Server";
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
-            // comboBox1
+            // classDropDown
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(15, 88);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(161, 26);
-            this.comboBox1.TabIndex = 3;
+            this.classDropDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.classDropDown.FormattingEnabled = true;
+            this.classDropDown.Location = new System.Drawing.Point(15, 88);
+            this.classDropDown.Name = "classDropDown";
+            this.classDropDown.Size = new System.Drawing.Size(161, 26);
+            this.classDropDown.TabIndex = 3;
             // 
-            // comboBox2
+            // serverDropDown
             // 
-            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(195, 88);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(161, 26);
-            this.comboBox2.TabIndex = 4;
+            this.serverDropDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.serverDropDown.FormattingEnabled = true;
+            this.serverDropDown.Location = new System.Drawing.Point(195, 88);
+            this.serverDropDown.Name = "serverDropDown";
+            this.serverDropDown.Size = new System.Drawing.Size(161, 26);
+            this.serverDropDown.TabIndex = 4;
             // 
-            // button1
+            // showClassResultButton
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(405, 88);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(118, 26);
-            this.button1.TabIndex = 5;
-            this.button1.Tag = "";
-            this.button1.Text = "Show Results";
-            this.button1.UseVisualStyleBackColor = true;
+            this.showClassResultButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.showClassResultButton.Location = new System.Drawing.Point(405, 88);
+            this.showClassResultButton.Name = "showClassResultButton";
+            this.showClassResultButton.Size = new System.Drawing.Size(118, 26);
+            this.showClassResultButton.TabIndex = 5;
+            this.showClassResultButton.Tag = "";
+            this.showClassResultButton.Text = "Show Results";
+            this.showClassResultButton.UseVisualStyleBackColor = true;
             // 
             // label14
             // 
             this.label14.AutoSize = true;
             this.label14.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label14.Location = new System.Drawing.Point(653, 9);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(53, 18);
+            this.label14.Size = new System.Drawing.Size(67, 24);
             this.label14.TabIndex = 16;
             this.label14.Text = "Query";
             // 
-            // radioButton1
+            // tankRadioButton
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.ForeColor = System.Drawing.SystemColors.Control;
-            this.radioButton1.Location = new System.Drawing.Point(6, 21);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(61, 21);
-            this.radioButton1.TabIndex = 17;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Tank";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.tankRadioButton.AutoSize = true;
+            this.tankRadioButton.ForeColor = System.Drawing.SystemColors.Control;
+            this.tankRadioButton.Location = new System.Drawing.Point(6, 21);
+            this.tankRadioButton.Name = "tankRadioButton";
+            this.tankRadioButton.Size = new System.Drawing.Size(61, 21);
+            this.tankRadioButton.TabIndex = 17;
+            this.tankRadioButton.TabStop = true;
+            this.tankRadioButton.Text = "Tank";
+            this.tankRadioButton.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // healerRadioButton
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.ForeColor = System.Drawing.SystemColors.Control;
-            this.radioButton2.Location = new System.Drawing.Point(74, 21);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(71, 21);
-            this.radioButton2.TabIndex = 18;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Healer";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.healerRadioButton.AutoSize = true;
+            this.healerRadioButton.ForeColor = System.Drawing.SystemColors.Control;
+            this.healerRadioButton.Location = new System.Drawing.Point(74, 21);
+            this.healerRadioButton.Name = "healerRadioButton";
+            this.healerRadioButton.Size = new System.Drawing.Size(71, 21);
+            this.healerRadioButton.TabIndex = 18;
+            this.healerRadioButton.TabStop = true;
+            this.healerRadioButton.Text = "Healer";
+            this.healerRadioButton.UseVisualStyleBackColor = true;
             // 
-            // radioButton3
+            // damageRadioButton
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.ForeColor = System.Drawing.SystemColors.Control;
-            this.radioButton3.Location = new System.Drawing.Point(151, 21);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(82, 21);
-            this.radioButton3.TabIndex = 19;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "Damage";
-            this.radioButton3.UseVisualStyleBackColor = true;
+            this.damageRadioButton.AutoSize = true;
+            this.damageRadioButton.ForeColor = System.Drawing.SystemColors.Control;
+            this.damageRadioButton.Location = new System.Drawing.Point(151, 21);
+            this.damageRadioButton.Name = "damageRadioButton";
+            this.damageRadioButton.Size = new System.Drawing.Size(82, 21);
+            this.damageRadioButton.TabIndex = 19;
+            this.damageRadioButton.TabStop = true;
+            this.damageRadioButton.Text = "Damage";
+            this.damageRadioButton.UseVisualStyleBackColor = true;
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.radioButton1);
-            this.groupBox1.Controls.Add(this.radioButton3);
-            this.groupBox1.Controls.Add(this.radioButton2);
+            this.groupBox1.Controls.Add(this.tankRadioButton);
+            this.groupBox1.Controls.Add(this.damageRadioButton);
+            this.groupBox1.Controls.Add(this.healerRadioButton);
             this.groupBox1.Location = new System.Drawing.Point(15, 561);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(243, 63);
@@ -400,16 +392,16 @@ namespace JennyCasey_Assign3
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
             // 
-            // button5
+            // roleResultButton
             // 
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(405, 577);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(118, 26);
-            this.button5.TabIndex = 21;
-            this.button5.Tag = "";
-            this.button5.Text = "Show Results";
-            this.button5.UseVisualStyleBackColor = true;
+            this.roleResultButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.roleResultButton.Location = new System.Drawing.Point(405, 577);
+            this.roleResultButton.Name = "roleResultButton";
+            this.roleResultButton.Size = new System.Drawing.Size(118, 26);
+            this.roleResultButton.TabIndex = 21;
+            this.roleResultButton.Tag = "";
+            this.roleResultButton.Text = "Show Results";
+            this.roleResultButton.UseVisualStyleBackColor = true;
             // 
             // label15
             // 
@@ -423,16 +415,24 @@ namespace JennyCasey_Assign3
             this.label15.TabIndex = 22;
             this.label15.Text = "Percentage of Max Level Players in All Guilds";
             // 
-            // button6
+            // maxLvlPercentButton
             // 
-            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.Location = new System.Drawing.Point(405, 692);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(118, 26);
-            this.button6.TabIndex = 23;
-            this.button6.Tag = "";
-            this.button6.Text = "Show Results";
-            this.button6.UseVisualStyleBackColor = true;
+            this.maxLvlPercentButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.maxLvlPercentButton.Location = new System.Drawing.Point(405, 692);
+            this.maxLvlPercentButton.Name = "maxLvlPercentButton";
+            this.maxLvlPercentButton.Size = new System.Drawing.Size(118, 26);
+            this.maxLvlPercentButton.TabIndex = 23;
+            this.maxLvlPercentButton.Tag = "";
+            this.maxLvlPercentButton.Text = "Show Results";
+            this.maxLvlPercentButton.UseVisualStyleBackColor = true;
+            // 
+            // queryResultBox
+            // 
+            this.queryResultBox.Location = new System.Drawing.Point(600, 36);
+            this.queryResultBox.Name = "queryResultBox";
+            this.queryResultBox.Size = new System.Drawing.Size(684, 707);
+            this.queryResultBox.TabIndex = 24;
+            this.queryResultBox.Text = "";
             // 
             // Form1
             // 
@@ -440,41 +440,41 @@ namespace JennyCasey_Assign3
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(1296, 755);
-            this.Controls.Add(this.button6);
+            this.Controls.Add(this.queryResultBox);
+            this.Controls.Add(this.maxLvlPercentButton);
             this.Controls.Add(this.label15);
-            this.Controls.Add(this.button5);
+            this.Controls.Add(this.roleResultButton);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.guildTypeResultButton);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.comboBox6);
-            this.Controls.Add(this.numericUpDown1);
+            this.Controls.Add(this.guildTypeDropDown);
+            this.Controls.Add(this.minimumLevel);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.numericUpDown2);
+            this.Controls.Add(this.showClassResultButton);
+            this.Controls.Add(this.maximumLevel);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.comboBox3);
+            this.Controls.Add(this.showPercentResultButton);
+            this.Controls.Add(this.serverDropDown);
+            this.Controls.Add(this.roleServerLevelResultButton);
+            this.Controls.Add(this.serverPercentDropDown);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.comboBox5);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.serverRangeDropDown);
+            this.Controls.Add(this.classDropDown);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.comboBox4);
+            this.Controls.Add(this.roleDropDown);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
             this.Name = "Form1";
             this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.minimumLevel)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.maximumLevel)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -484,39 +484,39 @@ namespace JennyCasey_Assign3
 
         #endregion
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.Button showPercentResultButton;
+        private System.Windows.Forms.ComboBox serverPercentDropDown;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.ComboBox roleDropDown;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.ComboBox comboBox6;
+        private System.Windows.Forms.Button guildTypeResultButton;
+        private System.Windows.Forms.ComboBox guildTypeDropDown;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
+        private System.Windows.Forms.NumericUpDown maximumLevel;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown minimumLevel;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.ComboBox comboBox5;
+        private System.Windows.Forms.Button roleServerLevelResultButton;
+        private System.Windows.Forms.ComboBox serverRangeDropDown;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ComboBox classDropDown;
+        private System.Windows.Forms.ComboBox serverDropDown;
+        private System.Windows.Forms.Button showClassResultButton;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton3;
+        private System.Windows.Forms.RadioButton tankRadioButton;
+        private System.Windows.Forms.RadioButton healerRadioButton;
+        private System.Windows.Forms.RadioButton damageRadioButton;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button roleResultButton;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button maxLvlPercentButton;
+        private System.Windows.Forms.RichTextBox queryResultBox;
     }
 }
 
