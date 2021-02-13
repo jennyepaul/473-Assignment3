@@ -8,10 +8,14 @@ using System.IO;
 namespace JennyCasey_Assign3
 {
     public enum Race { Orc, Troll, Tauren, Forsaken };
-    public enum Class { Warrior, Mage, Druid, Priest, Warlock, Rogue, Paladin, Hunter, Shaman };
-    public enum Role { Tank, Healer, DPS };
+    public enum Classes
+    {
+        Warrior, Mage, Druid, Priest, Warlock,
+        Rogue, Paladin, Hunter, Shaman
+    };
+    public enum Role { Tank, Healer, Damage };
 
-    class Player: IComparable
+    class Player : IComparable
     {//constants for program
         private static uint MAX_LEVEL = 60;
 
@@ -19,7 +23,7 @@ namespace JennyCasey_Assign3
         private uint id;
         private string name;
         private Race race;
-        private Class classes;
+        private Classes playerClass;
         private uint level;
         private uint exp;
         private uint guildId;
@@ -30,7 +34,7 @@ namespace JennyCasey_Assign3
             id = 0;
             name = "";
             race = 0;
-            classes = 0;
+            playerClass = 0;
             level = 0;
             exp = 0;
             guildId = 0;
@@ -38,12 +42,12 @@ namespace JennyCasey_Assign3
 
 
         //alternate constructor
-        public Player(uint id, string name, Race race, Class classes, uint level, uint exp, uint guildId)
+        public Player(uint id, string name, Race race, Classes playerClass, uint level, uint exp, uint guildId)
         {
             this.id = id;
             this.name = name;
             this.race = race;
-            this.classes = classes;
+            this.playerClass = playerClass;
             this.level = level;
             this.exp = exp;
             this.guildId = guildId;
@@ -70,10 +74,10 @@ namespace JennyCasey_Assign3
             set { race = value; }
         }
 
-        public Class Classes
+        public Classes PlayerClass
         {
-            get { return classes; }
-            set { classes = value; }
+            get { return playerClass; }
+            set { playerClass = value; }
         }
         public uint Level
         {
@@ -138,7 +142,7 @@ namespace JennyCasey_Assign3
                 {
                     uint parsed_id;
                     Race parsed_race;
-                    Class parsed_classes;
+                    Classes parsed_classes;
                     uint parsed_level;
                     uint parsed_exp;
                     uint parsed_guildID;
@@ -205,7 +209,7 @@ namespace JennyCasey_Assign3
 
         public override string ToString()
         {
-            return (this.name.PadRight(15) + "\t" + this.Classes + "\t" + this.Level);
+            return (this.name.PadRight(15) + "\t" + this.PlayerClass + "\t" + this.Level);
         }
     }
 }
