@@ -23,6 +23,7 @@ namespace JennyCasey_Assign3
         private uint id;
         private string name;
         private Race race;
+        private Role playerRole;
         private Classes playerClass;
         private uint level;
         private uint exp;
@@ -34,6 +35,7 @@ namespace JennyCasey_Assign3
             id = 0;
             name = "";
             race = 0;
+            playerRole = 0;
             playerClass = 0;
             level = 0;
             exp = 0;
@@ -42,11 +44,12 @@ namespace JennyCasey_Assign3
 
 
         //alternate constructor
-        public Player(uint id, string name, Race race, Classes playerClass, uint level, uint exp, uint guildId)
+        public Player(uint id, string name, Race race, Role playerRole, Classes playerClass, uint level, uint exp, uint guildId)
         {
             this.id = id;
             this.name = name;
             this.race = race;
+            this.playerRole = playerRole;
             this.playerClass = playerClass;
             this.level = level;
             this.exp = exp;
@@ -143,6 +146,7 @@ namespace JennyCasey_Assign3
                     uint parsed_id;
                     Race parsed_race;
                     Classes parsed_classes;
+                    Role parsed_role;
                     uint parsed_level;
                     uint parsed_exp;
                     uint parsed_guildID;
@@ -152,13 +156,14 @@ namespace JennyCasey_Assign3
                     //grab all the info
                     uint.TryParse(parameter[0], out parsed_id);
                     Enum.TryParse(parameter[2], out parsed_race);
-                    Enum.TryParse(parameter[3], out parsed_classes);
-                    uint.TryParse(parameter[4], out parsed_level);
-                    uint.TryParse(parameter[5], out parsed_exp);
-                    uint.TryParse(parameter[6], out parsed_guildID);
+                    Enum.TryParse(parameter[3], out parsed_role);
+                    Enum.TryParse(parameter[5], out parsed_classes);
+                    uint.TryParse(parameter[5], out parsed_level);
+                    uint.TryParse(parameter[6], out parsed_exp);
+                    uint.TryParse(parameter[7], out parsed_guildID);
 
                     //create a new player object
-                    Player newPlayer = new Player(parsed_id, parameter[1], parsed_race, parsed_classes, parsed_level, parsed_exp, parsed_guildID);
+                    Player newPlayer = new Player(parsed_id, parameter[1], parsed_race,parsed_role, parsed_classes, parsed_level, parsed_exp, parsed_guildID);
 
                     //add object to the dictionary
                     players.Add(parsed_id, newPlayer);
