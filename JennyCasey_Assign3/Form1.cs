@@ -55,6 +55,7 @@ namespace JennyCasey_Assign3
         //the following event will print out the query results for "All Class Types from a Single Server"
         private void showClassResultButton_Click(object sender, EventArgs e)
         {
+            //clear the query result box
             queryResultBox.Clear();
 
             Guild newGuild = new Guild();
@@ -273,6 +274,27 @@ namespace JennyCasey_Assign3
                 queryResultBox.AppendText("\nEND RESULTS\n");
                 queryResultBox.AppendText("--------------------------------------------------------------------------------------------------------------------------------\n");
             }
+        }
+
+        //the following event will print out the query result for "Percentage of Each Race from a Single Server" query
+        private void showPercentResultButton_Click(object sender, EventArgs e)
+        {
+            //clear the query result box
+            queryResultBox.Clear();
+        }
+
+        //the following event will print out the query reault for "All Guilds of a Single Type" query
+        private void guildTypeResultButton_Click(object sender, EventArgs e)
+        {
+            //clear the query result box
+            queryResultBox.Clear();
+        }
+
+        //the following event will print out the query result for "Percentage of Max Level Players in All Guilds"
+        private void maxLvlPercentButton_Click(object sender, EventArgs e)
+        {
+            //clear the query result box
+            queryResultBox.Clear();
         }
     }
 }

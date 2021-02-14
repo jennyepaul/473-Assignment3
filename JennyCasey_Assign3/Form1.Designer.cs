@@ -110,6 +110,7 @@ namespace JennyCasey_Assign3
             this.showPercentResultButton.Tag = "";
             this.showPercentResultButton.Text = "Show Results";
             this.showPercentResultButton.UseVisualStyleBackColor = true;
+            this.showPercentResultButton.Click += new System.EventHandler(this.showPercentResultButton_Click);
             // 
             // label6
             // 
@@ -258,6 +259,7 @@ namespace JennyCasey_Assign3
             this.guildTypeResultButton.Tag = "";
             this.guildTypeResultButton.Text = "Show Results";
             this.guildTypeResultButton.UseVisualStyleBackColor = true;
+            this.guildTypeResultButton.Click += new System.EventHandler(this.guildTypeResultButton_Click);
             // 
             // label13
             // 
@@ -422,13 +424,14 @@ namespace JennyCasey_Assign3
             // maxLvlPercentButton
             // 
             this.maxLvlPercentButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maxLvlPercentButton.Location = new System.Drawing.Point(405, 692);
+            this.maxLvlPercentButton.Location = new System.Drawing.Point(405, 672);
             this.maxLvlPercentButton.Name = "maxLvlPercentButton";
             this.maxLvlPercentButton.Size = new System.Drawing.Size(118, 26);
             this.maxLvlPercentButton.TabIndex = 23;
             this.maxLvlPercentButton.Tag = "";
             this.maxLvlPercentButton.Text = "Show Results";
             this.maxLvlPercentButton.UseVisualStyleBackColor = true;
+            this.maxLvlPercentButton.Click += new System.EventHandler(this.maxLvlPercentButton_Click);
             // 
             // queryResultBox
             // 
