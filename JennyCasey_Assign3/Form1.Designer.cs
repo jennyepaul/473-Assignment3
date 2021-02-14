@@ -405,6 +405,7 @@ namespace JennyCasey_Assign3
             this.roleResultButton.Tag = "";
             this.roleResultButton.Text = "Show Results";
             this.roleResultButton.UseVisualStyleBackColor = true;
+            this.roleResultButton.Click += new System.EventHandler(this.roleResultButton_Click);
             // 
             // label15
             // 

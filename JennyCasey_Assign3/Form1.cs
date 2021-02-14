@@ -180,5 +180,11 @@ namespace JennyCasey_Assign3
                }  
             }
         }
+
+        //the following event will print out the query results for "All Players Who can Fill a Role but Currently Aren't"
+        private void roleResultButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
