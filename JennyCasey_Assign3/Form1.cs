@@ -40,6 +40,16 @@ namespace JennyCasey_Assign3
             serverDropDown.Items.Add("TKWasASetback");
             serverDropDown.Items.Add("ZappyBoi");
 
+            //load the server and role drop down for the "All Players of a Single Role in a Single Server in
+            //a Level Range" query area
+            serverRangeDropDown.Items.Add("Beta4Azeroth");
+            serverRangeDropDown.Items.Add("TKWasASetback");
+            serverRangeDropDown.Items.Add("ZappyBoi");
+
+            roleDropDown.Items.Add(Role.Damage);
+            roleDropDown.Items.Add(Role.Healer);
+            roleDropDown.Items.Add(Role.Tank);
+
         }
 
         //the following event will print out the query results for "All Class Types from a Single Server"
@@ -97,9 +107,78 @@ namespace JennyCasey_Assign3
             
         }
 
+        //the following event will print out the query results for "All Role Types from a Single Server w/in a Level Range"
         private void roleServerLevelResultButton_Click(object sender, EventArgs e)
         {
+            //clear the query result box
+            queryResultBox.Clear();
 
+            Guild newGuild = new Guild();
+            
+            //if the user has selected a role and server 
+            if(roleDropDown.SelectedIndex != -1 && serverRangeDropDown.SelectedIndex != -1)
+            {
+                //set the selected values to a variable
+                int min =(int)minimumLevel.Value;
+                int max = (int)maximumLevel.Value;
+                Role roleSelected = (Role)roleDropDown.SelectedItem;
+                string serverSelected = (string)serverRangeDropDown.SelectedItem;
+
+                /*
+                queryResultBox.AppendText("ROLE SELECTED: " + roleSelected + "\tSERVER: " + serverSelected +
+                                            "\tMIN LEVEL SELECTED: " + min + "\tMAX LEVEL SELECTED: " + max);
+                */
+
+                //query the guild dictionary
+                var ServerQuery =
+                    from guild in guildDictionary
+                    where guild.Value.Server == serverSelected
+                    select guild;
+
+                //query the player dictionary
+                var RoleQuery =
+                    from player in playerDictionary
+                    where (player.Value.PlayerRole == roleSelected) && 
+                          (player.Value.Level >= min) && 
+                          (player.Value.Level <= max)
+                    orderby player.Value.Level ascending
+                    select player;
+
+                //output the info to the query box
+                queryResultBox.AppendText("All " + roleSelected + " from [" + serverSelected + "]," +
+                                           " Levels " + min + " to " + max+ "\n");
+                queryResultBox.AppendText("---------------------------------------------------------------------------------------------------------------------------------\n");
+
+                //go through the Class Query
+                foreach (var p in RoleQuery)
+                {
+                    //go through the Server Query
+                    foreach (var guild in ServerQuery)
+                    {
+                        //if the guild from the Server Query's ID matches the guildID of the player from the Player Query, print out the info
+                        if (guild.Key == p.Value.GuildID)
+                        {
+                            queryResultBox.AppendText("Name: " + p.Value.Name + "\t(" + p.Value.PlayerClass + " - " + p.Value.PlayerRole + ")"
+                                                + "\tRace: " + p.Value.Race + "\tLevel: " + p.Value.Level + "\t\t<" + guild.Value.Name + ">" +
+                                                "\n");
+                        }
+                    }
+                }
+                queryResultBox.AppendText("\nEND RESULTS\n");
+                queryResultBox.AppendText("--------------------------------------------------------------------------------------------------------------------------------\n");
+            }
+            //otherwise they forgot to select something so output message
+            else if(roleDropDown.SelectedIndex == -1 || serverRangeDropDown.SelectedIndex == -1)
+            {
+               if(roleDropDown.SelectedIndex == -1)
+               {
+                    queryResultBox.Text = "Please select a role";
+               }
+               if (serverRangeDropDown.SelectedIndex == -1)
+               {
+                   queryResultBox.Text = "Please select a server";
+               }  
+            }
         }
     }
 }

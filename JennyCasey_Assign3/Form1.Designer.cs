@@ -207,6 +207,11 @@ namespace JennyCasey_Assign3
             // maximumLevel
             // 
             this.maximumLevel.Location = new System.Drawing.Point(126, 369);
+            this.maximumLevel.Maximum = new decimal(new int[] {
+            60,
+            0,
+            0,
+            0});
             this.maximumLevel.Name = "maximumLevel";
             this.maximumLevel.Size = new System.Drawing.Size(50, 22);
             this.maximumLevel.TabIndex = 15;
