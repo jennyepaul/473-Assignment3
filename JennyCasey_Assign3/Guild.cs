@@ -7,21 +7,26 @@ using System.IO;
 
 namespace JennyCasey_Assign3
 {
+    public enum GuildType { Casual, Questing, Mythic, Raiding, PVP };
+
     class Guild : IComparable
     {
         private uint id;
+        private GuildType type;
         private string name;
         private string server;
         public Guild()
         {
             id = 0;
+            type = 0;
             name = "";
             server = "";
         }
         //alternate constructor
-        public Guild(uint id, string name, string server)
+        public Guild(uint id, GuildType type, string name, string server)
         {
             this.id = id;
+            this.type = type;
             this.name = name;
             this.server = server;
         }
@@ -30,6 +35,13 @@ namespace JennyCasey_Assign3
             //free read/write acess so getter and setters
             get { return id; }
             set { id = value; }
+        }
+
+        public GuildType Type
+        {
+            //free read/write access 
+            get { return type; }
+            set { type = value; }
         }
         public string Name
         {
@@ -49,6 +61,7 @@ namespace JennyCasey_Assign3
         {
             string guildRecord;
             uint uintGuildId;
+            GuildType type;
             var guilds = new Dictionary<uint, Guild>();
             using (StreamReader inFile = new StreamReader("../../guilds.txt"))
             {
@@ -56,14 +69,16 @@ namespace JennyCasey_Assign3
                 {
                     string[] guildInfo = guildRecord.Split('\t', '-');
                     string guildId = guildInfo[0];
-                    string guildName = guildInfo[1];
-                    string guildServer = guildInfo[2];
+                    string guildType = guildInfo[1];
+                    string guildName = guildInfo[3];
+                    string guildServer = guildInfo[3];
 
                     //parse the guild ID to an unsigned integer
                     uint.TryParse(guildId, out uintGuildId);
+                    Enum.TryParse(guildType, out type);
 
                     //add the guilds to a dictionary so we can access them
-                    Guild newGuild = new Guild(uintGuildId, guildName, guildServer);
+                    Guild newGuild = new Guild(uintGuildId, type, guildName, guildServer);
                     guilds.Add(uintGuildId, newGuild);
                 }
             }

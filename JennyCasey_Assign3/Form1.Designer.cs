@@ -153,7 +153,6 @@ namespace JennyCasey_Assign3
             this.label8.Size = new System.Drawing.Size(51, 18);
             this.label8.TabIndex = 9;
             this.label8.Text = "Server";
-            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // serverRangeDropDown
             // 
@@ -203,7 +202,6 @@ namespace JennyCasey_Assign3
             this.label10.Size = new System.Drawing.Size(36, 18);
             this.label10.TabIndex = 14;
             this.label10.Text = "Max";
-            this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
             // maximumLevel
             // 
@@ -278,7 +276,6 @@ namespace JennyCasey_Assign3
             this.label1.Size = new System.Drawing.Size(274, 18);
             this.label1.TabIndex = 0;
             this.label1.Text = "All Class Type from a Single Server";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -301,7 +298,6 @@ namespace JennyCasey_Assign3
             this.label3.Size = new System.Drawing.Size(51, 18);
             this.label3.TabIndex = 2;
             this.label3.Text = "Server";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // classDropDown
             // 
