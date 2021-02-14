@@ -124,11 +124,6 @@ namespace JennyCasey_Assign3
                 Role roleSelected = (Role)roleDropDown.SelectedItem;
                 string serverSelected = (string)serverRangeDropDown.SelectedItem;
 
-                /*
-                queryResultBox.AppendText("ROLE SELECTED: " + roleSelected + "\tSERVER: " + serverSelected +
-                                            "\tMIN LEVEL SELECTED: " + min + "\tMAX LEVEL SELECTED: " + max);
-                */
-
                 //query the guild dictionary
                 var ServerQuery =
                     from guild in guildDictionary
@@ -184,7 +179,100 @@ namespace JennyCasey_Assign3
         //the following event will print out the query results for "All Players Who can Fill a Role but Currently Aren't"
         private void roleResultButton_Click(object sender, EventArgs e)
         {
+            //clear the output box
+            queryResultBox.Clear();
+            Guild newGuild = new Guild();
+            //check what button was selected
+            //TANK ROLE
+            if(tankRadioButton.Checked)
+            {
+                //the player can have a class of: Druid, Warrior, Paladin, so search for those players
+                //who have that class in the dictionary
+                var ClassQuery =
+                    from player in playerDictionary
+                    where  (player.Value.PlayerClass == Classes.Druid)
+                           || (player.Value.PlayerClass == Classes.Warrior)
+                           || (player.Value.PlayerClass == Classes.Paladin)
+                    select player;
 
+                //now search through the class query to find those players who are not a Tank already
+                var TankQuery =
+                    from player in ClassQuery
+                    where (player.Value.PlayerRole != Role.Tank)
+                    orderby player.Value.Level ascending
+                    select player;
+               
+                //output to the query box
+                queryResultBox.AppendText("All Eligible Players Not Fulfilling the Tank Role\n");
+                queryResultBox.AppendText("---------------------------------------------------------------------------------------------------------------------------------\n");
+                
+                //go through the Tank Query
+                foreach (var p in TankQuery)
+                {
+                    string guildName = newGuild.FindGuildName(guildDictionary, p.Value.GuildID);
+                    queryResultBox.AppendText("Name: " + p.Value.Name + "\t(" + p.Value.PlayerClass + " - " + p.Value.PlayerRole + ")"
+                                               + "\tRace: " + p.Value.Race + "\tLevel: " + p.Value.Level + "\t\t<" + guildName + ">\n");              
+                }
+                queryResultBox.AppendText("\nEND RESULTS\n");
+                queryResultBox.AppendText("--------------------------------------------------------------------------------------------------------------------------------\n");
+            }
+            //HEALER ROLE
+            if(healerRadioButton.Checked)
+            {
+                //the player can have a class of: Druid, Priest, Paladin, Shaman, so go through 
+                //dictionary and find all players who have those classes
+                var ClassQuery =
+                    from player in playerDictionary
+                    where (player.Value.PlayerClass == Classes.Druid) ||
+                           (player.Value.PlayerClass == Classes.Shaman) ||
+                           (player.Value.PlayerClass == Classes.Paladin) ||
+                           (player.Value.PlayerClass == Classes.Priest)
+                    select player;
+
+                //now search through the class query to find those players who are not a Healer already
+                var HealerQuery = 
+                    from player in ClassQuery
+                    where (player.Value.PlayerRole != Role.Healer)
+                    orderby player.Value.Level ascending
+                    select player;
+
+                //output to the query box
+                queryResultBox.AppendText("All Eligible Players Not Fulfilling the Healer Role\n");
+                queryResultBox.AppendText("---------------------------------------------------------------------------------------------------------------------------------\n");
+
+                //go through the Healer Query
+                foreach (var p in HealerQuery)
+                {
+                    string guildName = newGuild.FindGuildName(guildDictionary, p.Value.GuildID);
+                    queryResultBox.AppendText("Name: " + p.Value.Name + "\t(" + p.Value.PlayerClass + " - " + p.Value.PlayerRole + ")"
+                                               + "\tRace: " + p.Value.Race + "\tLevel: " + p.Value.Level + "\t\t<" + guildName + ">\n");
+                }
+                queryResultBox.AppendText("\nEND RESULTS\n");
+                queryResultBox.AppendText("--------------------------------------------------------------------------------------------------------------------------------\n");
+            }
+            //DAMAGE ROLE
+            if (damageRadioButton.Checked)
+            {
+                //the player can have a class of: everyone
+                var DamageQuery =
+                    from player in playerDictionary
+                    where (player.Value.PlayerRole != Role.Damage)
+                    select player;
+
+                //output to the query box
+                queryResultBox.AppendText("All Eligible Players Not Fulfilling the Damage Role\n");
+                queryResultBox.AppendText("---------------------------------------------------------------------------------------------------------------------------------\n");
+
+                //go through the Damage Query
+                foreach (var p in DamageQuery)
+                {
+                    string guildName = newGuild.FindGuildName(guildDictionary, p.Value.GuildID);
+                    queryResultBox.AppendText("Name: " + p.Value.Name + "\t(" + p.Value.PlayerClass + " - " + p.Value.PlayerRole + ")"
+                                               + "\tRace: " + p.Value.Race + "\tLevel: " + p.Value.Level + "\t\t<" + guildName + ">\n");
+                }
+                queryResultBox.AppendText("\nEND RESULTS\n");
+                queryResultBox.AppendText("--------------------------------------------------------------------------------------------------------------------------------\n");
+            }
         }
     }
 }

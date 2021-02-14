@@ -84,13 +84,13 @@ namespace JennyCasey_Assign3
             }
             return guilds;
         }
-        public string FindGuildName(Dictionary<uint, Guild> dictionary, string serverSelected)
+        public string FindGuildName(Dictionary<uint, Guild> dictionary, uint ID)
         {
             string name;
             //based on server selected, find all associated guild IDs, then search player dictionary for that
             foreach (var g in dictionary)
             {
-                if (g.Value.Server == serverSelected)
+                if (g.Key == ID)
                 {
                     name = g.Value.Name;
                     return name;
