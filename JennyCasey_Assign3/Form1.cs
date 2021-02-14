@@ -48,44 +48,58 @@ namespace JennyCasey_Assign3
             queryResultBox.Clear();
 
             Guild newGuild = new Guild();
-            Classes classSelected = (Classes)classDropDown.SelectedItem;
-            string serverSelected = (string)serverDropDown.SelectedItem;
 
-            //query the guild dictionary
-            var ServerQuery =
-                from guild in guildDictionary
-                where guild.Value.Server == serverSelected
-                select guild;
-
-            //query the player dictionary
-            var ClassQuery = 
-                from player in playerDictionary
-                where (player.Value.PlayerClass == classSelected)
-                select player;
-           
-            //NEED TO SORT BY LEVEL
-
-            //output the info to the query box
-            queryResultBox.AppendText("All " + classSelected + " from " + serverSelected + "\n");
-            queryResultBox.AppendText("-------------------------------------------------------------------------------------------------------------------------\n");
-
-            //go through the Class Query
-            foreach (var p in ClassQuery)
+            if(classDropDown.SelectedIndex != -1 && serverDropDown.SelectedIndex != -1)
             {
-                //go through the Server Query
-                foreach (var g in ServerQuery)
+                Classes classSelected = (Classes)classDropDown.SelectedItem;
+                string serverSelected = (string)serverDropDown.SelectedItem;
+
+                //query the guild dictionary
+                var ServerQuery =
+                    from guild in guildDictionary
+                    where guild.Value.Server == serverSelected
+                    select guild;
+
+                //query the player dictionary
+                var ClassQuery =
+                    from player in playerDictionary
+                    where (player.Value.PlayerClass == classSelected)
+                    select player;
+
+                //NEED TO SORT BY LEVEL
+
+                //output the info to the query box
+                queryResultBox.AppendText("All " + classSelected + " from " + serverSelected + "\n");
+                queryResultBox.AppendText("---------------------------------------------------------------------------------------------------------------------------------\n");
+
+                //go through the Class Query
+                foreach (var p in ClassQuery)
                 {
-                    //if the guild from the Server Query's ID matches the guildID of the player from the Player Query, print out the info
-                    if (g.Key == p.Value.GuildID)
+                    //go through the Server Query
+                    foreach (var g in ServerQuery)
                     {
-                        queryResultBox.AppendText("Name: " + p.Value.Name + "\t(" + p.Value.PlayerClass + " - " + p.Value.PlayerRole + ")"
-                                            + "\tRace: " + p.Value.Race + "\tLevel: " + p.Value.Level + "\t\t<" + g.Value.Name + ">" +
-                                            "\n");
+                        //if the guild from the Server Query's ID matches the guildID of the player from the Player Query, print out the info
+                        if (g.Key == p.Value.GuildID)
+                        {
+                            queryResultBox.AppendText("Name: " + p.Value.Name + "\t(" + p.Value.PlayerClass + " - " + p.Value.PlayerRole + ")"
+                                                + "\tRace: " + p.Value.Race + "\tLevel: " + p.Value.Level + "\t\t<" + g.Value.Name + ">" +
+                                                "\n");
+                        }
                     }
                 }
+                queryResultBox.AppendText("\nEND RESULTS\n");
+                queryResultBox.AppendText("--------------------------------------------------------------------------------------------------------------------------------\n");
             }
-            queryResultBox.AppendText("\nEND RESULTS\n");
-            queryResultBox.AppendText("------------------------------------------------------------------------------------------------------------------------\n");
+            else
+            {
+                queryResultBox.Text = "Please select a class and server to see query results!";
+;           }
+            
+        }
+
+        private void roleServerLevelResultButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
