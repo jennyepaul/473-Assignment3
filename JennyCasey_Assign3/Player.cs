@@ -23,8 +23,8 @@ namespace JennyCasey_Assign3
         private uint id;
         private string name;
         private Race race;
-        private Role playerRole;
         private Classes playerClass;
+        private Role playerRole;
         private uint level;
         private uint exp;
         private uint guildId;
@@ -81,6 +81,12 @@ namespace JennyCasey_Assign3
         {
             get { return playerClass; }
             set { playerClass = value; }
+        }
+
+        public Role PlayerRole
+        {
+            get { return playerRole; }
+            set { playerRole = value; }
         }
         public uint Level
         {
@@ -156,14 +162,14 @@ namespace JennyCasey_Assign3
                     //grab all the info
                     uint.TryParse(parameter[0], out parsed_id);
                     Enum.TryParse(parameter[2], out parsed_race);
-                    Enum.TryParse(parameter[3], out parsed_role);
-                    Enum.TryParse(parameter[5], out parsed_classes);
+                    Enum.TryParse(parameter[3], out parsed_classes);
+                    Enum.TryParse(parameter[4], out parsed_role);
                     uint.TryParse(parameter[5], out parsed_level);
                     uint.TryParse(parameter[6], out parsed_exp);
                     uint.TryParse(parameter[7], out parsed_guildID);
 
                     //create a new player object
-                    Player newPlayer = new Player(parsed_id, parameter[1], parsed_race,parsed_role, parsed_classes, parsed_level, parsed_exp, parsed_guildID);
+                    Player newPlayer = new Player(parsed_id, parameter[1], parsed_race, parsed_role, parsed_classes, parsed_level, parsed_exp, parsed_guildID);
 
                     //add object to the dictionary
                     players.Add(parsed_id, newPlayer);
@@ -214,7 +220,7 @@ namespace JennyCasey_Assign3
 
         public override string ToString()
         {
-            return (this.name.PadRight(15) + "\t" + this.PlayerClass + "\t" + this.Level);
+            return ("Name: "+ this.name.PadRight(15) + "\t" + "(" + this.PlayerClass + " - " + this.PlayerRole + ")" + "\tLevel:" + this.Level);
         }
     }
 }

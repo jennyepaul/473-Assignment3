@@ -70,7 +70,7 @@ namespace JennyCasey_Assign3
                     string[] guildInfo = guildRecord.Split('\t', '-');
                     string guildId = guildInfo[0];
                     string guildType = guildInfo[1];
-                    string guildName = guildInfo[3];
+                    string guildName = guildInfo[2];
                     string guildServer = guildInfo[3];
 
                     //parse the guild ID to an unsigned integer
@@ -84,7 +84,20 @@ namespace JennyCasey_Assign3
             }
             return guilds;
         }
-
+        public string FindGuildName(Dictionary<uint, Guild> dictionary, string serverSelected)
+        {
+            string name;
+            //based on server selected, find all associated guild IDs, then search player dictionary for that
+            foreach (var g in dictionary)
+            {
+                if (g.Value.Server == serverSelected)
+                {
+                    name = g.Value.Name;
+                    return name;
+                }
+            }
+            return "not found";
+        }
         public int CompareTo(Object alpha)
         {
             //checking for null values

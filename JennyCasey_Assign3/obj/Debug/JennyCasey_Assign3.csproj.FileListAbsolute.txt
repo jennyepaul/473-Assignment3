@@ -1,0 +1,10 @@
+C:\Users\jenny\Desktop\473-Assignment3\JennyCasey_Assign3\bin\Debug\JennyCasey_Assign3.exe.config
+C:\Users\jenny\Desktop\473-Assignment3\JennyCasey_Assign3\bin\Debug\JennyCasey_Assign3.exe
+C:\Users\jenny\Desktop\473-Assignment3\JennyCasey_Assign3\bin\Debug\JennyCasey_Assign3.pdb
+C:\Users\jenny\Desktop\473-Assignment3\JennyCasey_Assign3\obj\Debug\JennyCasey_Assign3.csprojAssemblyReference.cache
+C:\Users\jenny\Desktop\473-Assignment3\JennyCasey_Assign3\obj\Debug\JennyCasey_Assign3.Form1.resources
+C:\Users\jenny\Desktop\473-Assignment3\JennyCasey_Assign3\obj\Debug\JennyCasey_Assign3.Properties.Resources.resources
+C:\Users\jenny\Desktop\473-Assignment3\JennyCasey_Assign3\obj\Debug\JennyCasey_Assign3.csproj.GenerateResource.cache
+C:\Users\jenny\Desktop\473-Assignment3\JennyCasey_Assign3\obj\Debug\JennyCasey_Assign3.csproj.CoreCompileInputs.cache
+C:\Users\jenny\Desktop\473-Assignment3\JennyCasey_Assign3\obj\Debug\JennyCasey_Assign3.exe
+C:\Users\jenny\Desktop\473-Assignment3\JennyCasey_Assign3\obj\Debug\JennyCasey_Assign3.pdb

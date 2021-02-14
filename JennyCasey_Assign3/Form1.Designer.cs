@@ -327,6 +327,7 @@ namespace JennyCasey_Assign3
             this.showClassResultButton.Tag = "";
             this.showClassResultButton.Text = "Show Results";
             this.showClassResultButton.UseVisualStyleBackColor = true;
+            this.showClassResultButton.Click += new System.EventHandler(this.showClassResultButton_Click);
             // 
             // label14
             // 
