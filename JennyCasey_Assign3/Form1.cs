@@ -42,6 +42,7 @@ namespace JennyCasey_Assign3
 
         }
 
+        //the following event will print out the query results for "All Class Types from a Single Server"
         private void showClassResultButton_Click(object sender, EventArgs e)
         {
             queryResultBox.Clear();
