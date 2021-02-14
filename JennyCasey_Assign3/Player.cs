@@ -220,7 +220,8 @@ namespace JennyCasey_Assign3
 
         public override string ToString()
         {
-            return ("Name: "+ this.name.PadRight(15) + "\t" + "(" + this.PlayerClass + " - " + this.PlayerRole + ")" + "\tLevel:" + this.Level);
+            return ("Name: " + this.Name + "\t(" + this.PlayerClass + " - " + this.PlayerRole + ")"
+                                                + "\tRace: " + this.Race + "\tLevel: " + this.Level);
         }
     }
 }

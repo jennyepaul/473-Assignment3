@@ -77,8 +77,6 @@ namespace JennyCasey_Assign3
                     where (player.Value.PlayerClass == classSelected)
                     select player;
 
-                //NEED TO SORT BY LEVEL
-
                 //output the info to the query box
                 queryResultBox.AppendText("All " + classSelected + " from " + serverSelected + "\n");
                 queryResultBox.AppendText("---------------------------------------------------------------------------------------------------------------------------------\n");
@@ -92,9 +90,7 @@ namespace JennyCasey_Assign3
                         //if the guild from the Server Query's ID matches the guildID of the player from the Player Query, print out the info
                         if (g.Key == p.Value.GuildID)
                         {
-                            queryResultBox.AppendText("Name: " + p.Value.Name + "\t(" + p.Value.PlayerClass + " - " + p.Value.PlayerRole + ")"
-                                                + "\tRace: " + p.Value.Race + "\tLevel: " + p.Value.Level + "\t\t<" + g.Value.Name + ">" +
-                                                "\n");
+                            queryResultBox.AppendText(p.Value + "\t\t<" + g.Value.Name + ">\n");
                         }
                     }
                 }
@@ -154,9 +150,7 @@ namespace JennyCasey_Assign3
                         //if the guild from the Server Query's ID matches the guildID of the player from the Player Query, print out the info
                         if (guild.Key == p.Value.GuildID)
                         {
-                            queryResultBox.AppendText("Name: " + p.Value.Name + "\t(" + p.Value.PlayerClass + " - " + p.Value.PlayerRole + ")"
-                                                + "\tRace: " + p.Value.Race + "\tLevel: " + p.Value.Level + "\t\t<" + guild.Value.Name + ">" +
-                                                "\n");
+                            queryResultBox.AppendText(p.Value + "\t\t<" + guild.Value.Name + ">\n");
                         }
                     }
                 }
@@ -211,8 +205,7 @@ namespace JennyCasey_Assign3
                 foreach (var p in TankQuery)
                 {
                     string guildName = newGuild.FindGuildName(guildDictionary, p.Value.GuildID);
-                    queryResultBox.AppendText("Name: " + p.Value.Name + "\t(" + p.Value.PlayerClass + " - " + p.Value.PlayerRole + ")"
-                                               + "\tRace: " + p.Value.Race + "\tLevel: " + p.Value.Level + "\t\t<" + guildName + ">\n");              
+                    queryResultBox.AppendText(p.Value + "\t\t<" + guildName + ">\n");              
                 }
                 queryResultBox.AppendText("\nEND RESULTS\n");
                 queryResultBox.AppendText("--------------------------------------------------------------------------------------------------------------------------------\n");
@@ -245,8 +238,7 @@ namespace JennyCasey_Assign3
                 foreach (var p in HealerQuery)
                 {
                     string guildName = newGuild.FindGuildName(guildDictionary, p.Value.GuildID);
-                    queryResultBox.AppendText("Name: " + p.Value.Name + "\t(" + p.Value.PlayerClass + " - " + p.Value.PlayerRole + ")"
-                                               + "\tRace: " + p.Value.Race + "\tLevel: " + p.Value.Level + "\t\t<" + guildName + ">\n");
+                    queryResultBox.AppendText(p.Value + "\t\t<" + guildName + ">\n");
                 }
                 queryResultBox.AppendText("\nEND RESULTS\n");
                 queryResultBox.AppendText("--------------------------------------------------------------------------------------------------------------------------------\n");
@@ -268,13 +260,15 @@ namespace JennyCasey_Assign3
                 foreach (var p in DamageQuery)
                 {
                     string guildName = newGuild.FindGuildName(guildDictionary, p.Value.GuildID);
-                    queryResultBox.AppendText("Name: " + p.Value.Name + "\t(" + p.Value.PlayerClass + " - " + p.Value.PlayerRole + ")"
-                                               + "\tRace: " + p.Value.Race + "\tLevel: " + p.Value.Level + "\t\t<" + guildName + ">\n");
+                    queryResultBox.AppendText(p.Value + "\t\t<" + guildName + ">\n");
                 }
                 queryResultBox.AppendText("\nEND RESULTS\n");
                 queryResultBox.AppendText("--------------------------------------------------------------------------------------------------------------------------------\n");
             }
         }
+
+
+        //FOLLOWING 3 ARE WHAT IS LEFT :)
 
         //the following event will print out the query result for "Percentage of Each Race from a Single Server" query
         private void showPercentResultButton_Click(object sender, EventArgs e)
