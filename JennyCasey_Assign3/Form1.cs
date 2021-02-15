@@ -393,9 +393,9 @@ namespace JennyCasey_Assign3
         private void maxLvlPercentButton_Click(object sender, EventArgs e)
         {
 
-            //PROBLEMS: 
-                // 1. The guilds are out of order 
-                // 2. Can't figure out how to print the guilds that are 0% 
+            //PROBLEM: 
+                // 1. Can't figure out how to print the guilds that are 0% 
+                // 2. Spacing is thrown off everytime I add in "<" and ">" on outsides of guild names
 
 
             //clear the query result box
