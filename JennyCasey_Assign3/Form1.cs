@@ -435,13 +435,13 @@ namespace JennyCasey_Assign3
                               };
 
             //use the guild ID number to get the name of the guild from the guild Dictionary 
-            var GuildName = from x in percentages
-                            join c in guildDictionary
-                            on x.IDnum equals c.Value.ID
+            var GuildName = from x in guildDictionary
+                            join c in percentages
+                            on x.Value.ID equals c.IDnum
                             select new
                             {
-                                Name = c.Value.Name,
-                                Percent = x.Percent,
+                                Name = x.Value.Name,
+                                Percent = c.Percent,
                             };
 
 
@@ -450,6 +450,7 @@ namespace JennyCasey_Assign3
             {
                 queryResultBox.AppendText(String.Format("{0,-30}\t\t{1:00.00}%\n\n", x.Name, x.Percent));
             }
+
 
 
             queryResultBox.AppendText("\nEND RESULTS\n");
