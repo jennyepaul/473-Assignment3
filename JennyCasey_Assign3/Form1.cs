@@ -50,6 +50,12 @@ namespace JennyCasey_Assign3
             roleDropDown.Items.Add(Role.Healer);
             roleDropDown.Items.Add(Role.Tank);
 
+            guildTypeDropDown.Items.Add("Casual");
+            guildTypeDropDown.Items.Add("Questing");
+            guildTypeDropDown.Items.Add("Mythic");
+            guildTypeDropDown.Items.Add("Raiding");
+            guildTypeDropDown.Items.Add("PVP");
+
         }
 
         //the following event will print out the query results for "All Class Types from a Single Server"
@@ -275,6 +281,8 @@ namespace JennyCasey_Assign3
         {
             //clear the query result box
             queryResultBox.Clear();
+
+
         }
 
         //the following event will print out the query reault for "All Guilds of a Single Type" query
@@ -282,6 +290,44 @@ namespace JennyCasey_Assign3
         {
             //clear the query result box
             queryResultBox.Clear();
+
+            //check to see if a guild type was selected 
+            if (guildTypeDropDown.SelectedIndex != -1)
+            {
+                queryResultBox.AppendText("All " + guildTypeDropDown.SelectedItem + "-Type of Guilds" + "\n");
+                queryResultBox.AppendText("--------------------------------------------------------------------------------------------------------------------------------\n");
+
+
+                //creates a query to retrieve the guilds that are of the type selected in the dropdown
+                //group the names of each guild by the server and then orders them by the server in 
+                //descending order 
+                var GuildsofSelectedType = from x in guildDictionary
+                                           where x.Value.Type == ((GuildType)guildTypeDropDown.SelectedIndex)
+                                           group new { x.Value.Name } by x.Value.Server into servergroup
+                                           orderby servergroup.Key descending
+                                           select servergroup;
+
+                
+                //print out the server and any names associated with that server
+                foreach (var server in GuildsofSelectedType)
+                {
+                    queryResultBox.AppendText(server.Key + "\n");
+                    foreach (var name in server)
+                    {
+                        queryResultBox.AppendText("\t<" + name.Name + ">\n");
+                }
+                }
+
+                queryResultBox.AppendText("\nEND RESULTS\n");
+                queryResultBox.AppendText("--------------------------------------------------------------------------------------------------------------------------------\n");
+            }
+            else
+            {
+                //if no guild type was selected from drop down
+                queryResultBox.AppendText("Please select a guild type.");
+            }
+
+
         }
 
         //the following event will print out the query result for "Percentage of Max Level Players in All Guilds"
