@@ -50,6 +50,17 @@ namespace JennyCasey_Assign3
             roleDropDown.Items.Add(Role.Healer);
             roleDropDown.Items.Add(Role.Tank);
 
+            serverPercentDropDown.Items.Add("Beta4Azeroth");
+            serverPercentDropDown.Items.Add("TKWasASetback");
+            serverPercentDropDown.Items.Add("ZappyBoi");
+
+            guildTypeDropDown.Items.Add("Casual");
+            guildTypeDropDown.Items.Add("Questing");
+            guildTypeDropDown.Items.Add("Mythic");
+            guildTypeDropDown.Items.Add("Raiding");
+            guildTypeDropDown.Items.Add("PVP");
+
+
         }
 
         //the following event will print out the query results for "All Class Types from a Single Server"
@@ -275,6 +286,64 @@ namespace JennyCasey_Assign3
         {
             //clear the query result box
             queryResultBox.Clear();
+
+            //make sure that a server has been selected from the server drop down 
+            if (serverPercentDropDown.SelectedIndex != -1)
+            {
+                queryResultBox.AppendText("Percentage of Each Race from " + serverPercentDropDown.SelectedItem + "\n");
+                queryResultBox.AppendText("--------------------------------------------------------------------------------------------------------------------------------\n");
+
+                //create a query to get the guild ID's that are associated with the server chosen
+                var serverToGuildID = from x in guildDictionary
+                                      where x.Value.Server.Contains((string)serverPercentDropDown.SelectedItem)
+                                      select x;
+
+                //use the previous query to find which players are from the server chosen
+                var guildIDMatch = from x in playerDictionary
+                                   join c in serverToGuildID
+                                   on x.Value.GuildID equals c.Value.ID
+                                   select x;
+
+                //keep track of the total number of players associated with the server chosen
+                double total = guildIDMatch.Count();
+
+                //group the players associated with that server by their race and count the amount of 
+                //player from each individual race 
+                var CountinRace = from x in guildIDMatch
+                                  group x by x.Value.Race into RaceGroup
+                                  select new
+                                  {
+                                      Race = RaceGroup.Key,
+                                      Count = RaceGroup.Count(),
+                                  };
+
+                //divide the amount of players associated with the specific server, that are from a specific race 
+                //by the total number of player from the server chosen to retrieve the percentage of each race from 
+                //the server chosen
+                var getPercentage = from x in CountinRace
+                                    orderby x.Count ascending
+                                    select new
+                                    {
+                                        Race = x.Race,
+                                        Percent = ((x.Count / total) * 100),
+                                    };
+
+
+                //print the name of the race and each percentage 
+                foreach (var x in getPercentage)
+                {
+                    queryResultBox.AppendText(String.Format("{0}\t\t{1:00.00}%\n", x.Race, x.Percent));
+                }
+
+                queryResultBox.AppendText("\nEND RESULTS\n");
+                queryResultBox.AppendText("--------------------------------------------------------------------------------------------------------------------------------\n");
+
+            }
+            else
+            {
+                //if no server was selected print error message to text box 
+                queryResultBox.AppendText("Please select a server.");
+            }
         }
 
         //the following event will print out the query reault for "All Guilds of a Single Type" query
@@ -282,6 +351,42 @@ namespace JennyCasey_Assign3
         {
             //clear the query result box
             queryResultBox.Clear();
+
+            //check to see if a guild type was selected 
+            if (guildTypeDropDown.SelectedIndex != -1)
+            {
+                queryResultBox.AppendText("All " + guildTypeDropDown.SelectedItem + "-Type of Guilds" + "\n");
+                queryResultBox.AppendText("--------------------------------------------------------------------------------------------------------------------------------\n");
+
+
+                //creates a query to retrieve the guilds that are of the type selected in the dropdown
+                //group the names of each guild by the server and then orders them by the server in 
+                //descending order 
+                var GuildsofSelectedType = from x in guildDictionary
+                                           where x.Value.Type == ((GuildType)guildTypeDropDown.SelectedIndex)
+                                           group new { x.Value.Name } by x.Value.Server into servergroup
+                                           orderby servergroup.Key descending
+                                           select servergroup;
+
+
+                //print out the server and any names associated with that server
+                foreach (var server in GuildsofSelectedType)
+                {
+                    queryResultBox.AppendText(server.Key + "\n");
+                    foreach (var name in server)
+                    {
+                        queryResultBox.AppendText("\t<" + name.Name + ">\n");
+                    }
+                }
+
+                queryResultBox.AppendText("\nEND RESULTS\n");
+                queryResultBox.AppendText("--------------------------------------------------------------------------------------------------------------------------------\n");
+            }
+            else
+            {
+                //if no guild type was selected from drop down
+                queryResultBox.AppendText("Please select a guild type.");
+            }
         }
 
         //the following event will print out the query result for "Percentage of Max Level Players in All Guilds"
