@@ -392,8 +392,93 @@ namespace JennyCasey_Assign3
         //the following event will print out the query result for "Percentage of Max Level Players in All Guilds"
         private void maxLvlPercentButton_Click(object sender, EventArgs e)
         {
+
+
+
             //clear the query result box
             queryResultBox.Clear();
+
+            queryResultBox.AppendText("Percentage of Max Level Players in All Guilds" + "\n");
+            queryResultBox.AppendText("--------------------------------------------------------------------------------------------------------------------------------\n");
+
+
+
+            //create a query to find the amount of players in each guild
+            var totalplayers = from x in playerDictionary
+                               group x by x.Value.GuildID into totalamtplayers
+                               select new
+                               {
+                                   IDnum = totalamtplayers.Key,
+                                   Count = totalamtplayers.Count(),
+
+                               };
+
+
+            //create a query to find the amount of max level player in each guild 
+            var maxlvlplayer = from x in playerDictionary
+                               where x.Value.Level == 60
+                               group x by x.Value.GuildID into maxlvlgroup
+                               select new
+                               {
+                                   IDnum = maxlvlgroup.Key,
+                                   Count = maxlvlgroup.Count(),
+                               };
+
+            
+
+            Guild guild1 = new Guild();
+
+            //create a query to get the percentage of max players in each guild by dividing the amount of max
+            //level players in each guild by the amount of total players in each guild
+            var percentages = from x in maxlvlplayer
+                              join c in totalplayers
+                              on x.IDnum equals c.IDnum
+                              select new
+                              {
+                                  Percent = (((double)x.Count / (double)c.Count) * 100),
+                                  IDNum = x.IDnum,
+                              };
+
+
+            //create a query to put the guilds in order according to the guild dictionary
+            var InOrder = from x in guildDictionary
+                            join c in totalplayers
+                            on x.Value.ID equals c.IDnum
+                            select new
+                            {
+                                IDNum = c.IDnum,
+                            };
+
+
+            bool percent = false;
+
+            foreach (var guildid in InOrder)
+            {
+                queryResultBox.AppendText(String.Format("<{0, -40}\t", guild1.FindGuildName(guildDictionary, guildid.IDNum) + ">"));
+                foreach (var x in percentages)
+                {
+                    if (guildid.IDNum == x.IDNum)
+                    {
+                        percent = true;
+                        queryResultBox.AppendText(String.Format("{0: 0.00}%\n\n", x.Percent));
+                        break;
+                    }
+                    else
+                    {
+                        percent = false;
+                    }
+                }
+                if (percent == false)
+                {
+                    decimal value = 0;
+                    queryResultBox.AppendText(String.Format("{0: 0.00}%\n\n", value));
+                }
+               
+            }
+           
+
+                queryResultBox.AppendText("\nEND RESULTS\n");
+            queryResultBox.AppendText("--------------------------------------------------------------------------------------------------------------------------------\n");
         }
     }
 }
