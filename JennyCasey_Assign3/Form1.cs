@@ -454,13 +454,13 @@ namespace JennyCasey_Assign3
 
             foreach (var guildid in InOrder)
             {
-                queryResultBox.AppendText(String.Format("{0, -30}", guild1.FindGuildName(guildDictionary, guildid.IDNum)));
+                queryResultBox.AppendText(String.Format("<{0,-30}\t\t", guild1.FindGuildName(guildDictionary, guildid.IDNum) + ">"));
                 foreach (var x in percentages)
                 {
                     if (guildid.IDNum == x.IDNum)
                     {
                         percent = true;
-                        queryResultBox.AppendText(String.Format("\t\t{0,20: 0.00}%\n\n", x.Percent));
+                        queryResultBox.AppendText(String.Format("{0, 30: 0.00}%\n\n", x.Percent));
                         break;
                     }
                     else
@@ -470,7 +470,8 @@ namespace JennyCasey_Assign3
                 }
                 if (percent == false)
                 {
-                    queryResultBox.AppendText(String.Format("\t\t0.00%\n\n"));
+                    decimal value = 0;
+                    queryResultBox.AppendText(String.Format("{0, 30: 0.00}%\n\n", value));
                 }
                
             }
