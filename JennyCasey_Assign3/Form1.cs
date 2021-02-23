@@ -394,6 +394,34 @@ namespace JennyCasey_Assign3
         {
             //clear the query result box
             queryResultBox.Clear();
+
+            /*basically we want to 
+             * (1) go through and find the total number of players in each guild
+             * (2) find the number of max players in each of those guilds
+             * (3) divide max by total
+             */
+
+            //group the players based on their guild ID and get the count of each group
+            foreach(var guild in guildDictionary)
+            {
+                var TotalPlayersinEachGuild =
+                    from player in playerDictionary
+                    group player by player.Value.GuildID into GroupedPlayers
+                    select new
+                    {
+                        GroupPlayerID = guild.Key,
+                        Count = GroupedPlayers.Count()
+                    };
+                /*
+                foreach(var player in TotalPlayersinEachGuild)
+                {
+                    queryResultBox.AppendText(player.ToString() + "\n");
+                }
+                */
+            }
+            
+
+           
         }
     }
 }
