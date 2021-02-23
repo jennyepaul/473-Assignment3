@@ -86,6 +86,7 @@ namespace JennyCasey_Assign3
                 var ClassQuery =
                     from player in playerDictionary
                     where (player.Value.PlayerClass == classSelected)
+                    orderby player.Value.Level, player.Value.Name ascending
                     select player;
 
                 //output the info to the query box
@@ -144,7 +145,7 @@ namespace JennyCasey_Assign3
                     where (player.Value.PlayerRole == roleSelected) && 
                           (player.Value.Level >= min) && 
                           (player.Value.Level <= max)
-                    orderby player.Value.Level ascending
+                    orderby player.Value.Level, player.Value.Name ascending
                     select player;
 
                 //output the info to the query box
@@ -205,7 +206,7 @@ namespace JennyCasey_Assign3
                 var TankQuery =
                     from player in ClassQuery
                     where (player.Value.PlayerRole != Role.Tank)
-                    orderby player.Value.Level ascending
+                    orderby player.Value.Level, player.Value.Name ascending
                     select player;
                
                 //output to the query box
@@ -275,6 +276,12 @@ namespace JennyCasey_Assign3
                 }
                 queryResultBox.AppendText("\nEND RESULTS\n");
                 queryResultBox.AppendText("--------------------------------------------------------------------------------------------------------------------------------\n");
+            }
+
+            //error output if nothing is checked
+            if(!damageRadioButton.Checked && !healerRadioButton.Checked && !tankRadioButton.Checked)
+            {
+                queryResultBox.AppendText("Please select a role to see results");
             }
         }
 

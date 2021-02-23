@@ -190,9 +190,24 @@ namespace JennyCasey_Assign3
             // minimumLevel
             // 
             this.minimumLevel.Location = new System.Drawing.Point(15, 369);
+            this.minimumLevel.Maximum = new decimal(new int[] {
+            60,
+            0,
+            0,
+            0});
+            this.minimumLevel.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.minimumLevel.Name = "minimumLevel";
             this.minimumLevel.Size = new System.Drawing.Size(50, 22);
             this.minimumLevel.TabIndex = 13;
+            this.minimumLevel.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // label10
             // 
@@ -213,9 +228,19 @@ namespace JennyCasey_Assign3
             0,
             0,
             0});
+            this.maximumLevel.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.maximumLevel.Name = "maximumLevel";
             this.maximumLevel.Size = new System.Drawing.Size(50, 22);
             this.maximumLevel.TabIndex = 15;
+            this.maximumLevel.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // label11
             // 
