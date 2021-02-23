@@ -137,12 +137,23 @@ namespace JennyCasey_Assign3
             //if the user has selected a role and server 
             if(roleDropDown.SelectedIndex != -1 && serverRangeDropDown.SelectedIndex != -1)
             {
+                //if the mimimum value is greater than the max one then set it so the max level is one plus minimum
+                if(minimumLevel.Value > maximumLevel.Value)
+                {
+                    maximumLevel.Value = minimumLevel.Value + 1;
+                }
+                //if the max value is less than min, set the minimum to be one less than the max
+                if(maximumLevel.Value < minimumLevel.Value)
+                {
+                    minimumLevel.Value = maximumLevel.Value - 1;
+                }
                 //set the selected values to a variable
                 int min =(int)minimumLevel.Value;
                 int max = (int)maximumLevel.Value;
                 Role roleSelected = (Role)roleDropDown.SelectedItem;
                 string serverSelected = (string)serverRangeDropDown.SelectedItem;
 
+                
                 //query the guild dictionary
                 var ServerQuery =
                     from guild in guildDictionary
