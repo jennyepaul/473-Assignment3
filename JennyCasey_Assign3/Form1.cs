@@ -278,9 +278,6 @@ namespace JennyCasey_Assign3
             }
         }
 
-
-        //FOLLOWING 3 ARE WHAT IS LEFT :)
-
         //the following event will print out the query result for "Percentage of Each Race from a Single Server" query
         private void showPercentResultButton_Click(object sender, EventArgs e)
         {
@@ -392,16 +389,11 @@ namespace JennyCasey_Assign3
         //the following event will print out the query result for "Percentage of Max Level Players in All Guilds"
         private void maxLvlPercentButton_Click(object sender, EventArgs e)
         {
-
-
-
             //clear the query result box
             queryResultBox.Clear();
 
             queryResultBox.AppendText("Percentage of Max Level Players in All Guilds" + "\n");
             queryResultBox.AppendText("--------------------------------------------------------------------------------------------------------------------------------\n");
-
-
 
             //create a query to find the amount of players in each guild
             var totalplayers = from x in playerDictionary
