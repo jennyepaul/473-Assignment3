@@ -1,4 +1,14 @@
-﻿using System;
+﻿/* CSCI473 
+ * Assignment 3
+ * DATE: 2/23/2021
+ * TEAM: JennyCasey
+ * Contributors: Jennifer Paul (z1878099) and Casey McDermott (z1878096)
+ * PURPOSE: The purpose of this assignment is to perform queries on the player and guild dictionaries.
+ *          Some examples of the queries are to check how many max players there are for each guild, all the guild
+ *          types of a specific type, players who could fill a role but currently aren't, and so on. 
+ */
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
