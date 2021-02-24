@@ -16,6 +16,21 @@ using System.IO;
 
 namespace JennyCasey_Assign3
 {
+    /**************************************************************************************************************************
+     * Class - Guild
+     * 
+     * The player class is used store the information of each individual guild. 
+     * 
+     * - There are 3 private attributes that stores information about each individual guild, such as the guild ID, name, type, and
+     *    server
+     * - The huild class has an IComparable interface in order to sort the guild based on its name.
+     * - Guild Class Methods: 
+     *            BuildGuildDictionary => This method reads in the guild.txt file and then parses the information for each
+     *                                    record into the class attributes, and then creates a new guild object, and adds
+     *                                    that object to the guild dictionary.
+     *            FindGuildName => The purpose of this method is to return the guild name when the guild ID is passed to it. 
+     *            
+     * ************************************************************************************************************************/
     public enum GuildType { Casual, Questing, Mythic, Raiding, PVP };
 
     class Guild : IComparable

@@ -20,6 +20,31 @@ using System.Windows.Forms;
 
 namespace JennyCasey_Assign3
 {
+    /**************************************************************************************************************************
+    * Class - Form1
+    * 
+    * The purpose of the Form1 class was to give functionality to the buttons on the form used for this assignment.
+    * 
+    * - There are two private attributes that are the dictionaries for the guilds and the players. 
+    * - Form1 Class Methods: 
+    *                       showClassResultButton_Click => this event will print out the query results for the class
+    *                                                       types that are in a particular server, the user will pick
+    *                                                       a class to query and the server to look through. If one or neither
+    *                                                       are picked, then the query result box will output an error message.
+    *                                                       
+    *                       roleServerLevelResultButton_Click => this event will print out the query results for all role
+    *                                                            types from a single server in a particular level range. 
+    *                                                            The user will pick a role, server, and a level range they
+    *                                                            want to search. The level values they can pick from are 1-60.
+    *                                                            If the minimum value is greater than the max value, the max
+    *                                                            value will autoincrement by min+1 and vice versa. If any important
+    *                                                            information is missing for the query, there will be an error message
+    *                                                            outputted to the result box
+    *                       roleResultButton_Click => This event will output all players who can fill a role but currently are not. If
+    *                                                   the player could be a DPS, Healer, or Tank but isn't it will print that player
+    *                                                   and their information to the query box. If the user does not choose a role, an
+    *                                                   error output message will be outputted. 
+    */
     public partial class Form1 : Form
     {
         private Dictionary<uint, Player> playerDictionary;
