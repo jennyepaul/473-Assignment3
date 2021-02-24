@@ -44,7 +44,18 @@ namespace JennyCasey_Assign3
     *                                                   the player could be a DPS, Healer, or Tank but isn't it will print that player
     *                                                   and their information to the query box. If the user does not choose a role, an
     *                                                   error output message will be outputted. 
-    */
+    *                       showPercentResultClick => This event will output the percent of each Race from a single server. The user will 
+    *                                                 choose a server from the dropdown menu and the percentage of each race present in 
+    *                                                 players that are apart of a guild with that server are displayed. If the user does 
+    *                                                 not choose a server that an error message is outputted. 
+    *                       guildTypeRestultButton_Click => This event will output all guilds with a specific type. The user will choose a 
+    *                                                       type from the dropdown menu and the will output all the server's and thier 
+    *                                                       specific guilds that are apart of that type. If the user does not select a type 
+    *                                                       then a error message will be outputted. 
+    *                       maxlvlPercentButton_Click => This event prints that percentage of max level players in all of the guilds. The user 
+    *                                                    pushed the Show Results button and the guilds and percentages are displayed. 
+    *                                                    
+    **************************************************************************************************************************/
     public partial class Form1 : Form
     {
         private Dictionary<uint, Player> playerDictionary;

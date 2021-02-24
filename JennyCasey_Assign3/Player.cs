@@ -16,6 +16,26 @@ using System.IO;
 
 namespace JennyCasey_Assign3
 {
+    /**************************************************************************************************************************
+     * Class - Player
+     * 
+     * The player class is used store the information of each individual player. 
+     * 
+     * - There are 1 constant that stores the max level. 
+     * - There are 7 private attributes that stores information about each individual players id, name, race, 
+     *   class, level, experiance, and guild ID.
+     * - The player class has an IComparable interface in order to sort the player based on their names.
+     * - Player Class Methods: 
+     *            BuildPlayerDictionary => This method takes the information from the player.txt about the players and 
+     *                                     places that information into a dictionary. 
+     *            PlayerLeaveGuild => Takes the name of the player as an argument and searches the dictionary for the name 
+     *                                provided. Once the name is located it sets the guild id associated with that name 
+     *                                to zero, therefore indicating the player is no longer associated with a guild. 
+     *            PlayerJoinGuild => Takes the name of the player, the desired guild id number and the dictionary as arguements. 
+     *                               First it searches the dictionary for the name provided. Then once the name is found, it sets 
+     *                               the players guild id to the desired guild id, therfore joining the guild. 
+     *            
+     * ************************************************************************************************************************/
     public enum Race { Orc, Troll, Tauren, Forsaken };
     public enum Classes
     {
